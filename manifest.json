@@ -1,0 +1,25 @@
+{
+    "name": "EasyVote",
+    "description": "Vote for your favorite game servers with one click!",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {},
+    "permissions": [
+        "declarativeContent",
+        "activeTab",
+        "scripting",
+        "webNavigation",
+        "storage"
+    ],
+    "host_permissions": [
+        "https://7daystodie-servers.com/*",
+        "https://conan-exiles.com/*",
+        "https://rust-servers.net/*",
+        "https://ark-servers.net/*",
+        "https://dayz-servers.org/*",
+        "https://steamcommunity.com/*"
+    ]
+}
