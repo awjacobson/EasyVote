@@ -41,7 +41,12 @@ function clickVoteButton() {
 function checkAgreeCheckbox() {
     const agreeCheckbox = document.querySelector("input[type='checkbox'][name='accept']");
     console.log("agreeCheckbox", agreeCheckbox);
-    if (agreeCheckbox) {
+    console.log("agreeCheckbox.checked", agreeCheckbox?.checked);
+    /*
+     * The checkbox may already be checked. Check that it is unchecked before
+     * clicking it.
+     */
+    if (agreeCheckbox && agreeCheckbox?.checked === false) {
         agreeCheckbox.click();
     }
 }
