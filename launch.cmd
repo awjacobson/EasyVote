@@ -1,0 +1,12 @@
+start https://7daystodie-servers.com/server/115464/
+start https://7daystodie-servers.com/server/124883/
+start https://7daystodie-servers.com/server/124884/
+start https://7daystodie-servers.com/server/124758/
+start https://7daystodie-servers.com/server/124885/
+start https://7daystodie-servers.com/server/124886/
+start https://rust-servers.net/server/166985/
+start https://rust-servers.net/server/172248/
+start https://rust-servers.net/server/172247/
+start https://conan-exiles.com/server/89991/
+start https://ark-servers.net/server/330774/
+start https://dayz-servers.org/server/121736
