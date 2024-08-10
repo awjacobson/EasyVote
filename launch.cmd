@@ -6,7 +6,6 @@ start https://7daystodie-servers.com/server/124885/
 start https://7daystodie-servers.com/server/124886/
 start https://rust-servers.net/server/166985/
 start https://rust-servers.net/server/172248/
-start https://rust-servers.net/server/172247/
 start https://rust-servers.net/server/172892/
 start https://conan-exiles.com/server/89991/
 start https://ark-servers.net/server/350672/
