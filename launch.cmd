@@ -10,4 +10,5 @@ start https://rust-servers.net/server/172892/
 start https://conan-exiles.com/server/89991/
 start https://ark-servers.net/server/350672/
 start https://ark-servers.net/server/330774/
-start https://dayz-servers.org/server/121736
+start https://ark-servers.net/server/375918/
+start https://dayz-servers.org/server/121736/
