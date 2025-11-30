@@ -11,11 +11,8 @@
     },
     "action": {},
     "permissions": [
-        "declarativeContent",
-        "activeTab",
         "scripting",
-        "webNavigation",
-        "storage"
+        "webNavigation"
     ],
     "host_permissions": [
         "https://7daystodie-servers.com/*",
