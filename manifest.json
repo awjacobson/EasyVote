@@ -1,8 +1,11 @@
 {
     "name": "EasyVote",
     "description": "Vote for your favorite game servers with one click!",
-    "version": "1.0",
+    "version": "1.0.1",
     "manifest_version": 3,
+    "icons": {
+        "128": "images/icon-128.png"
+    },
     "background": {
         "service_worker": "background.js"
     },

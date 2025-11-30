@@ -39,7 +39,7 @@ function clickVoteButton() {
 }
 
 function checkAgreeCheckbox() {
-    const agreeCheckbox = document.querySelector("input[type='checkbox'][name='accept']");
+    const agreeCheckbox = document.querySelector("input[type='checkbox'][name='accept'], input[type='checkbox'][name='sharedAccept']");
     console.log("agreeCheckbox", agreeCheckbox);
     console.log("agreeCheckbox.checked", agreeCheckbox?.checked);
     /*
@@ -60,11 +60,37 @@ function clickSteamButton() {
     }
 }
 
+function hasError() {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const error = urlParams.get('error');
+    
+    if (error !== null) {
+        // You have already voted for this server today.
+        // ?error=2&time=1764513195&fallbackcaptcha=
+        // do not continue
+
+        // You have reached your daily vote limit.
+        // ?error=9&time=&fallbackcaptcha=
+        // do not continue
+
+        // Authentication data mismatch detected.
+        // ?error=11&time=&fallbackcaptcha=
+        // go ahead and continue to Steam login
+        return error !== '11';
+    }
+
+    return false;
+}
+
 function votingPageHandler() {
     sleep(1000).then(() => {
         clickThirdPartyButton();
         clickVoteButton();
-        waitForElementToExist("input[type='checkbox'][name='accept']").then(element => {
+        waitForElementToExist("input[type='checkbox'][name='accept'], input[type='checkbox'][name='sharedAccept']").then(element => {
+            if (hasError()) {
+                return;
+            }
             checkAgreeCheckbox();
             clickSteamButton();
         });
@@ -116,7 +142,7 @@ function steamLoginPageHandler() {
 // https://7daystodie-servers.com/server/124884/
 // https://7daystodie-servers.com/server/115464/vote/confirm/
 function isVotingPage(url) {
-    return /^https:\/\/(?:7daystodie-servers|conan-exiles|rust-servers|ark-servers|dayz-servers)\.(?:com|net|org)\/server\/\d{5,7}(?:\/){0,1}(?:vote){0,1}(?:\/){0,1}$/.test(url)
+    return /^https:\/\/(?:7daystodie-servers|conan-exiles|rust-servers|ark-servers|dayz-servers)\.(?:com|net|org)\/server\/\d{5,7}(?:\/){0,1}(?:vote){0,1}(?:\/){0,1}/.test(url)
 }
   
 function getFunc(url) {
